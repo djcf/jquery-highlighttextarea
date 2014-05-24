@@ -16,5 +16,5 @@ You can select whole words by passing matchWholeWords to the plugin as a setting
   $('textarea').highlightTextarea({
     words: wordSet,
     caseSensitive: false,
-    matchWoleWords: true
+    matchWholeWord: true
   });
