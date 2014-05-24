@@ -9,3 +9,12 @@ Display is broken on Internet Explorer when a scrollbar is displayed.
 
 # Documentation and Demos
 http://mistic100.github.io/jQuery-highlightTextarea/
+
+# Wholeword Selection
+You can select whole words by passing matchWholeWords to the plugin as a settings variable, like so:
+
+  $('textarea').highlightTextarea({
+    words: wordSet,
+    caseSensitive: false,
+    matchWoleWords: true
+  });
