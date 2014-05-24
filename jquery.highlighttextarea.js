@@ -69,9 +69,16 @@
             that = this;
 
         $.each(this.settings.words, function(color, words) {
+            var pattern = "";
+            if(that.settings.matchWholeWord) {
+                pattern = '\\b('+ words.join('|') +')\\b';
+            } else {
+                pattern = '('+ words.join('|') +')';
+            }
+
             text = text.replace(
-                new RegExp('('+ words.join('|') +')', that.regParam),
-                '<span class="highlight" style="background-color:'+ color +';">$1</span>'
+                new RegExp(pattern, that.regParam),
+                '<mark class="textarea_highlight">$1</mark>'
             );
         });
 
@@ -153,6 +160,9 @@
         else if (!$.isEmptyObject(this.settings.ranges)) {
             this.settings.words = {};
             this.settings.ranges = Utilities.cleanRanges(this.settings.ranges, this.settings.color);
+        }
+        if ($.isEmptyObject(this.settings.matchWholeWord)) {
+            this.settings.matchWholeWord = false;
         }
 
         if (this.settings.debug) {
