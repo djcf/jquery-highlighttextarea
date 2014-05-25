@@ -79,13 +79,13 @@
 
             text = text.replace(
                 new RegExp(pattern, that.regParam),
-                '<span class="textarea_highlight" style="background-color:'+ color +';">$1</span>'
+                '<mark class="textarea_highlight" style="background-color:'+ color +';">$1</mark>'
             );
         });
 
         $.each(this.settings.ranges, function(i, range) {
-            text = Utilities.strInsert(text, range.end, '</span>');
-            text = Utilities.strInsert(text, range.start, '<span class="textarea_highlight" style="background-color:'+ range.color +';">');
+            text = Utilities.strInsert(text, range.end, '</mark>');
+            text = Utilities.strInsert(text, range.start, '<mark class="textarea_highlight" style="background-color:'+ range.color +';">');
         });
 
         this.$highlighter.html(text);
