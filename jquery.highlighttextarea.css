@@ -38,7 +38,7 @@
   white-space:pre-wrap;
   word-wrap:break-word;
 }
-.highlightTextarea  .highlight {
+.highlightTextarea .textarea_highlight {
   line-height:inherit;
 }
 .highlightTextarea .ui-wrapper {

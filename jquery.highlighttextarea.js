@@ -56,7 +56,8 @@
         caseSensitive: true,
         resizable: false,
         id: '',
-        debug: false
+        debug: false,
+        matchWholeWord: false
     };
 
     // PUBLIC METHODS
@@ -75,8 +76,6 @@
             } else {
                 pattern = '('+ words.join('|') +')';
             }
-            console.log(that.settings.matchWholeWord);
-            console.log(pattern);
 
             text = text.replace(
                 new RegExp(pattern, that.regParam),
@@ -162,11 +161,6 @@
         else if (!$.isEmptyObject(this.settings.ranges)) {
             this.settings.words = {};
             this.settings.ranges = Utilities.cleanRanges(this.settings.ranges, this.settings.color);
-        }
-        if (typeof(options.words.matchWholeWord) == 'undefined') {
-            this.settings.matchWholeWord = false;
-        } else {
-            this.settings.matchWholeWord = options.words.matchWholeWord;
         }
         if (this.settings.debug) {
             this.$main.addClass('debug');

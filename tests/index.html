@@ -67,6 +67,11 @@
           }],
           debug: true
       });
+      $('#demo10').highlightTextarea({
+          words: ['nec', 'at'],
+          debug: true,
+          matchWholeWord: true
+      });
 
       $('#demo7-tools .disable').click(function(e) {
           $('#demo7').highlightTextarea('disable');
@@ -129,6 +134,12 @@
     <h3>Ranges</h3>
 
     <textarea id="demo9" cols="50" rows="5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at massa non erat convallis vulputate molestie nec dui. Donec auctor blandit nibh quis luctus. Donec tincidunt auctor consequat.</textarea>
+  </article>
+
+  <article>
+    <h3>Match Whole Word</h3>
+
+    <textarea id="demo10" cols="50" rows="5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at massa non erat convallis vulputate molestie nec dui. Donec auctor blandit nibh quis luctus. Donec tincidunt auctor consequat.</textarea>
   </article>
 
   <article>
