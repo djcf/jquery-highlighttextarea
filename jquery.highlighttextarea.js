@@ -75,10 +75,12 @@
             } else {
                 pattern = '('+ words.join('|') +')';
             }
+            console.log(that.settings.matchWholeWord);
+            console.log(pattern);
 
             text = text.replace(
                 new RegExp(pattern, that.regParam),
-                '<span class="highlight" style="background-color:'+ color +';">$1</span>'
+                '<span class="textarea_highlight" style="background-color:'+ color +';">$1</span>'
             );
         });
 
@@ -161,10 +163,11 @@
             this.settings.words = {};
             this.settings.ranges = Utilities.cleanRanges(this.settings.ranges, this.settings.color);
         }
-        if ($.isEmptyObject(this.settings.matchWholeWord)) {
+        if (typeof(options.words.matchWholeWord) == 'undefined') {
             this.settings.matchWholeWord = false;
+        } else {
+            this.settings.matchWholeWord = options.words.matchWholeWord;
         }
-
         if (this.settings.debug) {
             this.$main.addClass('debug');
         }
